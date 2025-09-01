@@ -1,0 +1,9 @@
+Vector clocks are a fundamental concept in distributed systems that help establish a partial ordering of events across multiple nodes. Unlike physical clocks, vector clocks don't rely on synchronized time but instead track causality relationships between events.
+
+Each node in a distributed system maintains its own vector clock, which is essentially an array where each position corresponds to a different node. When an event occurs locally, the node increments its own position in the vector. When sending a message, the node includes its current vector clock with the message.
+
+The real power of vector clocks becomes apparent when handling concurrent events and conflict resolution. In systems like Amazon's Dynamo database, vector clocks help determine which version of data is more recent or if two versions are concurrent and require conflict resolution.
+
+Consider a simple example with two nodes, A and B. Initially, both have vector clocks [0,0]. When node A performs an operation, its clock becomes [1,0]. If A sends a message to B, B updates its clock to [1,1] after processing the message. This mechanism ensures that we can determine the happens-before relationship between events.
+
+Vector clocks are particularly useful in eventually consistent systems where nodes may temporarily have different views of the data. They provide a way to merge updates intelligently and detect conflicts that require application-level resolution strategies.
