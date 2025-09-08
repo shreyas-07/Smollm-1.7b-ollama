@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW1-Shreyas</title>
+    <style>
+        /* Basic styling to make the form look clean and professional */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4CAF50;
+        }
+
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+            margin-bottom: 0;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with biggest font size (h1) -->
+    <h1>My Personal Blog</h1>
+
+    <!-- Blog form with all required fields -->
+    <form id="blogForm">
+        <!-- Blog title input with placeholder, required, and autofocus -->
+        <label for="blogTitle">Blog Title:</label>
+        <input type="text" id="blogTitle" name="blogTitle" placeholder="Enter the title of your blog" required autofocus>
+
+        <!-- Author name input with placeholder and required -->
+        <label for="authorName">Author Name:</label>
+        <input type="text" id="authorName" name="authorName" placeholder="Enter your name" required>
+
+        <!-- Email input with placeholder and required -->
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <!-- Textarea for blog content with placeholder and required -->
+        <label for="blogContent">Blog Content:</label>
+        <textarea id="blogContent" name="blogContent" placeholder="Write your content here..." required></textarea>
+
+        <!-- Dropdown for category selection -->
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+            <option value="">Select a category</option>
+            <option value="Technology">Technology</option>
+            <option value="Lifestyle">Lifestyle</option>
+            <option value="Travel">Travel</option>
+            <option value="Education">Education</option>
+        </select>
+
+        <!-- Checkbox for terms and conditions -->
+        <div class="checkbox-container">
+            <input type="checkbox" id="terms" name="terms">
+            <label for="terms">I agree to the terms and conditions.</label>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit">Publish Blog</button>
+    </form>
+
+    <!-- Script tag to link JavaScript code -->
+    <script src="blog.js"></script>
+</body>
+</html>
